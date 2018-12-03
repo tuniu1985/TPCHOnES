@@ -1,0 +1,76 @@
+{
+  "aliases": {},
+  "index_patterns": "lineitem*",
+  "mappings": {
+    "_doc": {
+      "properties": {
+        "l_comment": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "l_commitdate": {
+          "type": "date",
+          "format": "yyyy-MM-dd"
+        },
+        "l_discount": {
+          "type": "scaled_float",
+          "scaling_factor": 100
+        },
+        "l_extendedprice": {
+          "type": "scaled_float",
+          "scaling_factor": 100
+        },
+        "l_linenumber": {
+          "type": "keyword"
+        },
+        "l_linestatus": {
+          "type": "keyword"
+        },
+        "l_orderkey": {
+          "type": "keyword"
+        },
+        "l_partkey": {
+          "type": "keyword"
+        },
+        "l_quantity": {
+          "type": "long"
+        },
+        "l_receiptdate": {
+          "type": "date",
+          "format": "yyyy-MM-dd"
+        },
+        "l_returnflag": {
+          "type": "keyword"
+        },
+        "l_shipdate": {
+          "type": "date",
+          "format": "yyyy-MM-dd"
+        },
+        "l_shipinstruct": {
+          "type": "keyword"
+        },
+        "l_shipmode": {
+          "type": "keyword"
+        },
+        "l_suppkey": {
+          "type": "keyword"
+        },
+        "l_tax": {
+          "type": "scaled_float",
+          "scaling_factor": 100
+        }
+      }
+    }
+  },
+  "settings": {
+    "index": {
+      "number_of_shards": "5",
+      "number_of_replicas": "1"
+    }
+  }
+}

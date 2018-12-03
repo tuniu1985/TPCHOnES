@@ -1,0 +1,50 @@
+{
+  "aliases": {},
+  "index_patterns": "part*",
+  "mappings": {
+    "_doc": {
+      "properties": {
+        "p_brand": {
+          "type": "keyword"
+        },
+        "p_comment": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "p_container": {
+          "type": "keyword"
+        },
+        "p_mfgr": {
+          "type": "keyword"
+        },
+        "p_name": {
+          "type": "keyword"
+        },
+        "p_partkey": {
+          "type": "keyword"
+        },
+        "p_retailprice": {
+          "type": "scaled_float",
+          "scaling_factor": 100
+        },
+        "p_size": {
+          "type": "long"
+        },
+        "p_type": {
+          "type": "keyword"
+        }
+      }
+    }
+  },
+  "settings": {
+    "index": {
+      "number_of_shards": "5",
+      "number_of_replicas": "1"
+    }
+  }
+}

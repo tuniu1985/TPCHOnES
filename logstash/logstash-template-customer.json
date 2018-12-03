@@ -1,0 +1,53 @@
+{
+  "aliases": {},
+  "index_patterns": "customer*",
+  "mappings": {
+    "_doc": {
+      "properties": {
+        "c_acctbal": {
+          "type": "scaled_float",
+          "scaling_factor": 100
+        },
+        "c_address": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "c_comment": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "c_custkey": {
+          "type": "keyword"
+        },
+        "c_mktsegment": {
+          "type": "keyword"
+        },
+        "c_name": {
+          "type": "keyword"
+        },
+        "c_nationkey": {
+          "type": "keyword"
+        },
+        "c_phone": {
+          "type": "keyword"
+        }
+      }
+    }
+  },
+    "settings": {
+      "index": {
+        "number_of_shards": "5",
+        "number_of_replicas": "1"
+      }
+    }
+}
